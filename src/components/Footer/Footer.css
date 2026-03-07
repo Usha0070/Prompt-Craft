@@ -43,4 +43,5 @@
   .footer__copy{margin-left:0}
   .footer__top{padding:40px 20px 32px}
   .footer__bottom{padding:18px 20px}
+  .footer__grid{grid-template-columns:repeat(2,1fr);gap:24px 16px}
 }

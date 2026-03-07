@@ -33,8 +33,12 @@
 
 .bento-teal{border-color:rgba(61,220,132,.12)}
 .bento-horizontal{flex-direction:row;align-items:center;gap:0}
-.bento-horizontal .bento-text{flex:1;padding:36px}
-.bento-horizontal .bento-img-wrapper{flex:1}
+/* text takes more space so image stays proportionate */
+.bento-horizontal .bento-text{flex:1.2;padding:36px}
+.bento-horizontal .bento-img-wrapper{
+  flex:0.8;
+  max-width:46%;         /* cap image column width */
+}
 
 .bento-img-wrapper{
   position:relative;overflow:hidden;
@@ -42,6 +46,8 @@
 }
 .bento-img-wrapper img{
   width:100%;display:block;
+  /* contain so the full image shows without overflow cropping */
+  object-fit:contain;
   transition:transform .38s var(--ease-spring);
 }
 .multiside__card:hover .bento-img-wrapper img{transform:scale(1.04)}
@@ -54,7 +60,16 @@
 .bento-text p{font-size:13px;color:var(--text-secondary);line-height:1.72}
 
 @media(max-width:860px){
+  .multiside__header{margin-bottom:36px}
   .multiside__row{grid-template-columns:1fr}
   .bento-horizontal{flex-direction:column}
   .bento-horizontal .bento-text{padding:24px}
+  .bento-horizontal .bento-img-wrapper{max-width:100%;width:100%}
+}
+@media(max-width:560px){
+  .multiside__header{margin-bottom:28px}
+  .multiside__subtitle{font-size:13px}
+  .bento-text{padding:20px}
+  .bento-text h3{font-size:16px}
+  .bento-text p{font-size:12.5px}
 }

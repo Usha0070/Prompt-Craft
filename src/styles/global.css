@@ -64,3 +64,17 @@ img{max-width:100%;display:block}
 ::-webkit-scrollbar-thumb:hover{background:#2d5438}
 .sr{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out);will-change:opacity,transform}
 .sr--visible{opacity:1!important;transform:translateY(0)!important}
+
+/* ── Global Mobile Responsive ── */
+@media(max-width:860px){
+  .section-wrap{padding:0 24px}
+  .section-pad{padding-top:52px;padding-bottom:52px}
+  .section-title{font-size:22px}
+}
+@media(max-width:560px){
+  .section-wrap{padding:0 16px}
+  .section-pad{padding-top:40px;padding-bottom:40px}
+  .section-title{font-size:20px}
+  .section-header{flex-wrap:wrap;gap:10px}
+  .btn-ghost{font-size:12px;padding:6px 14px}
+}

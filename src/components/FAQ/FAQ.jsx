@@ -11,10 +11,9 @@ export default function FAQ() {
       <h2 className="faq__title sr">Frequently Asked Questions</h2>
       <div className="faq__list">
         {FAQS.map((q, i) => (
+          <div key={i} className="faq-item__reveal sr" style={{ transitionDelay: i * 0.05 + 's' }}>
           <div
-            key={i}
-            className={'faq-item sr' + (open === i ? ' faq-item--open' : '')}
-            style={{ transitionDelay: i * 0.05 + 's' }}
+            className={'faq-item' + (open === i ? ' faq-item--open' : '')}
             onClick={() => setOpen(open === i ? null : i)}
           >
             <div className="faq-item__row">
@@ -25,6 +24,7 @@ export default function FAQ() {
               <p>Our platform is designed to be flexible and scalable for all use cases.
                  Contact support or check the documentation for detailed guidance specific to your workflow.</p>
             </div>
+          </div>
           </div>
         ))}
       </div>
