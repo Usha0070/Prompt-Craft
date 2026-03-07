@@ -1,30 +1,56 @@
+import useScrollReveal from '../../hooks/useScrollReveal';
 import './Enterprise.css';
-const SWATCHES = ['#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6','#1abc9c','#e67e22','#3ddc84','#27ae60'];
+
 export default function Enterprise() {
+  const ref = useScrollReveal();
   return (
-    <section className="enterprise section-wrap section-pad">
-      <div className="enterprise__card">
+    <section className="enterprise section-wrap section-pad" ref={ref}>
+      <div className="enterprise__card sr">
         <div className="enterprise__left">
           <span className="enterprise__eyebrow">🏢 Industry Standard Connection</span>
           <h2 className="enterprise__title">Advanced Enterprise Controls and Administration</h2>
-          <p className="enterprise__desc">Our services for organizations with powerful tools for secure access, data privacy, collaboration, and governance, making it ideal for enterprise environments with multiple teams and projects.</p>
+          <p className="enterprise__desc">
+            Our services for organizations with powerful tools for secure access, data privacy,
+            collaboration, and governance, making it ideal for enterprise environments with
+            multiple teams and projects.
+          </p>
           <div className="enterprise__sub-block">
             <span className="enterprise__sub-badge">Multi-Team Management</span>
-            <p className="enterprise__desc">For enterprise organizations handling multiple games and large teams, we allow you to create and manage multiple team workspaces with centralized control and oversight.</p>
+            <p className="enterprise__sub-desc">
+              For enterprise organizations handling multiple studios and large teams, we allow you
+              to create and manage multiple team workspaces with centralized control and oversight.
+            </p>
           </div>
           <button className="btn-primary enterprise__cta">Get Enterprise Access →</button>
         </div>
         <div className="enterprise__right">
-          <div className="enterprise__swatches">
-            {SWATCHES.map((c,i) => <div key={i} className="enterprise__swatch" style={{ background: c }} />)}
-          </div>
-          <div className="enterprise__pills">
-            {[{icon:'🔒',label:'Secure Access',sub:'Enterprise-grade security'},{icon:'👥',label:'Team Workspaces',sub:'Centralized oversight'},{icon:'📊',label:'Usage Analytics',sub:'Detailed reporting'}].map(p => (
-              <div key={p.label} className="enterprise__pill">
-                <span className="enterprise__pill-icon">{p.icon}</span>
-                <div><div className="enterprise__pill-label">{p.label}</div><div className="enterprise__pill-sub">{p.sub}</div></div>
+          <div className="enterprise__diagram">
+            <div className="enterprise__org-top">
+              <div className="enterprise__org-node enterprise__org-node--org">
+                <span className="enterprise__org-icon">🏢</span>
+                <span className="enterprise__org-label">Organization</span>
               </div>
-            ))}
+            </div>
+            <div className="enterprise__org-lines" aria-hidden="true">
+              <div className="enterprise__org-hline" />
+            </div>
+            <div className="enterprise__org-row">
+              {['Studio A','Studio B','Studio C'].map(s => (
+                <div key={s} className="enterprise__org-node enterprise__org-node--studio">
+                  <div className="enterprise__avatars">
+                    <span className="enterprise__avatar">👤</span>
+                    <span className="enterprise__avatar">👤</span>
+                    <span className="enterprise__avatar">👤</span>
+                  </div>
+                  <span className="enterprise__studio-label">{s}</span>
+                </div>
+              ))}
+              <div className="enterprise__org-node enterprise__org-node--create">
+                <span className="enterprise__create-icon">＋</span>
+                <span className="enterprise__studio-label">Create<br/>Workspace</span>
+              </div>
+            </div>
+            <p className="enterprise__diagram-caption">Multi-Team Management</p>
           </div>
         </div>
       </div>

@@ -1,11 +1,23 @@
-.model-card { border-radius: var(--radius-lg); background: var(--bg-card); border: 1px solid var(--border-subtle); overflow: hidden; cursor: pointer; transition: transform .22s, border-color .22s, box-shadow .22s; }
-.model-card:hover { transform: translateY(-4px); border-color: var(--border-green); box-shadow: 0 12px 32px rgba(0,0,0,.4); }
-.model-card--wide .model-card__thumb { height: 170px; }
-.model-card__thumb { position: relative; height: 120px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.model-card__emoji { font-size: 44px; line-height: 1; position: relative; z-index: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,.5)); transition: transform .22s; }
-.model-card:hover .model-card__emoji { transform: scale(1.12) translateY(-3px); }
-.model-card__overlay { position: absolute; inset: 0; background: linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 55%); pointer-events: none; }
-.model-card__info { padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
-.model-card__label { font-size: 12px; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.model-card__user { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-muted); }
-.model-card__user-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-green); opacity: .7; flex-shrink: 0; }
+.model-card{
+  border-radius:var(--radius-lg);background:var(--bg-card);
+  border:1px solid var(--border-subtle);overflow:hidden;cursor:pointer;
+  transition:transform .28s var(--ease-spring),border-color .22s,box-shadow .22s;
+}
+.model-card:hover{transform:translateY(-5px) scale(1.01);border-color:var(--border-green);box-shadow:var(--shadow-lift)}
+.model-card--wide .model-card__thumb{height:188px}
+.model-card__thumb{position:relative;height:130px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+/* zoomed-out: contain + padding for full visibility */
+.model-card__image{
+  width:100%;height:100%;object-fit:contain;
+  padding:10%;position:relative;z-index:1;
+  transition:transform .32s var(--ease-spring);
+}
+.model-card--wide .model-card__image{object-fit:cover;padding:0}
+.model-card:hover .model-card__image{transform:scale(1.07)}
+.model-card__emoji{font-size:44px;line-height:1;position:relative;z-index:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));transition:transform .22s}
+.model-card:hover .model-card__emoji{transform:scale(1.12) translateY(-3px)}
+.model-card__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.42) 0%,transparent 55%);pointer-events:none;z-index:2}
+.model-card__info{padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.model-card__label{font-size:11.5px;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.model-card__user{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--text-muted)}
+.model-card__user-pic{width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--border-subtle)}

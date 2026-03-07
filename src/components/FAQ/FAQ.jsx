@@ -1,26 +1,33 @@
 import { useState } from 'react';
 import { FAQS } from '../../data/footer';
+import useScrollReveal from '../../hooks/useScrollReveal';
 import './FAQ.css';
-function FAQItem({ q, isOpen, onToggle }) {
-  return (
-    <div className={'faq-item' + (isOpen ? ' faq-item--open' : '')}>
-      <button className="faq-item__trigger" onClick={onToggle}>
-        <span className="faq-item__question">{q}</span>
-        <span className="faq-item__icon">{isOpen ? '−' : '+'}</span>
-      </button>
-      {isOpen && <div className="faq-item__answer"><p>Our platform provides flexible options to fit your workflow. Reach out to our support team for detailed guidance.</p></div>}
-    </div>
-  );
-}
+
 export default function FAQ() {
   const [open, setOpen] = useState(null);
+  const ref = useScrollReveal();
   return (
-    <section className="faq section-wrap section-pad">
-      <h2 className="faq__title">Frequently Asked Questions</h2>
+    <section className="faq section-wrap section-pad" ref={ref}>
+      <h2 className="faq__title sr">Frequently Asked Questions</h2>
       <div className="faq__list">
-        {FAQS.map((q,i) => <FAQItem key={i} q={q} isOpen={open===i} onToggle={() => setOpen(open===i?null:i)} />)}
+        {FAQS.map((q, i) => (
+          <div
+            key={i}
+            className={'faq-item sr' + (open === i ? ' faq-item--open' : '')}
+            style={{ transitionDelay: i * 0.05 + 's' }}
+            onClick={() => setOpen(open === i ? null : i)}
+          >
+            <div className="faq-item__row">
+              <span className="faq-item__q">{q}</span>
+              <span className="faq-item__icon">{open === i ? '−' : '+'}</span>
+            </div>
+            <div className="faq-item__body">
+              <p>Our platform is designed to be flexible and scalable for all use cases.
+                 Contact support or check the documentation for detailed guidance specific to your workflow.</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <p className="faq__contact">Didn't find the answer? <button className="faq__contact-link">Contact us →</button></p>
     </section>
   );
 }
