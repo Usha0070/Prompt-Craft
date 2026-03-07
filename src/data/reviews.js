@@ -1,0 +1,5 @@
+export const REVIEWS = [
+  { id:1, text:'The process of creating 3D models has become remarkably fast. My workflow is now much more efficient, and the visuals of my projects have improved significantly, earning praise from clients. I even tried 3D printing some of the models, and the results were excellent.', name:'Mostakin Abedin Shovon', role:'Software Developer', rating:5, avatar:'M' },
+  { id:2, text:'Generating 3D models has never been this effortless. The platform has boosted my productivity and added a professional touch to my work. A few of the models I printed in 3D came out flawless.', name:'Sabrina Binty Akhtar', role:'AI/ML Engineer', rating:5, avatar:'S' },
+  { id:3, text:'This tool has transformed how I create 3D assets. Projects that used to take hours are now done in minutes, and the designs consistently wow my clients. I even brought some models into the real world with 3D printing, and they looked amazing.', name:'Israt Binte Elias', role:'3D Model Trainer', rating:5, avatar:'I' },
+];

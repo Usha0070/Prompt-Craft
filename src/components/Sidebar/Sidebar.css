@@ -1,0 +1,8 @@
+.sidebar { width:72px; background:#0d1a10; border-right:1px solid var(--border-subtle); display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:4px; flex-shrink:0; height:100%; }
+.sidebar__item { display:flex; flex-direction:column; align-items:center; gap:4px; width:60px; padding:10px 6px; border-radius:var(--radius-md); background:transparent; border:none; cursor:pointer; transition:background .18s; color:var(--text-muted); }
+.sidebar__item:hover { background:rgba(255,255,255,.06); color:var(--text-secondary); }
+.sidebar__item--active { background:rgba(61,220,132,.12) !important; color:var(--accent-green) !important; }
+.sidebar__icon  { font-size:20px; line-height:1; }
+.sidebar__label { font-size:9px; font-weight:600; text-align:center; letter-spacing:.2px; line-height:1.2; }
+.sidebar__spacer { flex:1; }
+.sidebar__item--vote { color:#f59e0b; }

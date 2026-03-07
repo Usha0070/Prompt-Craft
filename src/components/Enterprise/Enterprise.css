@@ -1,0 +1,18 @@
+.enterprise__card { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; background: linear-gradient(135deg,#0f2318 0%,#111 100%); border-radius: var(--radius-xl); padding: 48px; border: 1px solid var(--border-green); position: relative; overflow: hidden; }
+.enterprise__card::before { content:''; position: absolute; top:-60px; right:-60px; width:300px; height:300px; border-radius:50%; background: radial-gradient(circle,rgba(61,220,132,.07) 0%,transparent 70%); pointer-events:none; }
+.enterprise__eyebrow { display:inline-block; padding:4px 12px; border-radius:var(--radius-sm); background:var(--accent-green-dim); color:var(--accent-green); font-size:12px; font-weight:600; margin-bottom:16px; }
+.enterprise__title { font-size:28px; font-weight:800; color:#fff; line-height:1.25; margin-bottom:14px; }
+.enterprise__desc { font-size:14px; color:var(--text-secondary); line-height:1.75; }
+.enterprise__sub-block { margin-top:20px; padding:18px; border-radius:var(--radius-md); background:rgba(255,255,255,.03); border:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:10px; }
+.enterprise__sub-badge { display:inline-block; padding:3px 10px; border-radius:4px; background:var(--accent-green-dim); color:var(--accent-green); font-size:11px; font-weight:700; width:fit-content; }
+.enterprise__cta { margin-top:24px; font-size:14px !important; padding:11px 24px !important; }
+.enterprise__swatches { display:grid; grid-template-columns:repeat(3,40px); gap:10px; margin-bottom:24px; }
+.enterprise__swatch { width:40px; height:40px; border-radius:10px; opacity:.75; transition:opacity .2s,transform .2s; }
+.enterprise__swatch:hover { opacity:1; transform:scale(1.1); }
+.enterprise__pills { display:flex; flex-direction:column; gap:10px; }
+.enterprise__pill { display:flex; align-items:center; gap:12px; padding:13px 16px; border-radius:var(--radius-md); background:rgba(255,255,255,.04); border:1px solid var(--border-subtle); transition:background .2s; }
+.enterprise__pill:hover { background:rgba(61,220,132,.06); border-color:var(--border-green); }
+.enterprise__pill-icon { font-size:20px; flex-shrink:0; }
+.enterprise__pill-label { font-size:13px; font-weight:600; color:#fff; }
+.enterprise__pill-sub { font-size:11px; color:var(--text-muted); margin-top:1px; }
+@media (max-width:860px) { .enterprise__card { grid-template-columns:1fr; padding:32px 24px; } }
