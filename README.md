@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# PromptCraft 🎨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> AI-powered Text to 3D & Image to 3D model generation platform
+
+---
+
+## Overview
+
+PromptCraft is a modern web platform that lets users generate high-quality 3D models from text prompts or images using AI. It features a Model Market for browsing and sharing community creations, enterprise-grade team management tools, and a clean, responsive UI built for both creators and developers.
+
+---
+
+## Features
+
+- **Text to 3D** — Generate 3D models instantly from a text description
+- **Image to 3D** — Upload any image and convert it into a 3D model
+- **Multi-Side Image to 3D** — Upload front, side, and back views for high-fidelity results
+- **Model Market** — Browse, filter, and download community-created 3D models
+- **AI Texture Editing** — Refine colours, patterns, and materials via prompt
+- **Free Retry** — Re-generate models for free until you get the perfect result
+- **Enterprise Controls** — Multi-team workspace management with centralised oversight
+- **Responsive Design** — Fully optimised for desktop, tablet, and mobile
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 18, JSX |
+| Styling | CSS Modules, CSS Variables |
+| Routing | React Router DOM |
+| Animations | Intersection Observer API (custom scroll-reveal hook) |
+| Deployment | Vercel |
+| Version Control | Git, GitHub |
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js v16 or higher
+- npm v8 or higher
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Usha0070/Prompt-Craft.git
+
+# Navigate into the project
+cd Prompt-Craft
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+|---------|-------------|
+| `npm start` | Runs the app in development mode with hot reload |
+| `npm run build` | Builds the app for production into the `build` folder |
+| `npm test` | Launches the test runner in interactive watch mode |
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+Prompt-Craft/
+├── public/                  # Static assets & images
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── Navbar/
+│   │   ├── Hero/
+│   │   ├── Features/
+│   │   ├── Categories/
+│   │   ├── MultiSide/
+│   │   ├── Enterprise/
+│   │   ├── Reviews/
+│   │   ├── FAQ/
+│   │   └── Footer/
+│   ├── pages/               # Page-level components
+│   │   ├── Home.jsx
+│   │   ├── TextTo3D.jsx
+│   │   ├── ImageTo3D.jsx
+│   │   └── ModelMarket.jsx
+│   ├── data/                # Static data & content
+│   ├── hooks/               # Custom React hooks
+│   └── styles/              # Global styles & variables
+└── package.json
+```
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deployment
 
-### `npm run build`
+This project is deployed on **Vercel** with automatic deployments triggered on every push to the `main` branch.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To deploy your own instance:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Fork this repository
+2. Import it into [Vercel](https://vercel.com)
+3. Set the production branch to `main`
+4. Click Deploy — done!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project is licensed under the [MIT License](LICENSE).
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contact
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Usha0070** — [mdushakhan007@gmail.com](mailto:mdushakhan007@gmail.com)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub: [@Usha0070](https://github.com/Usha0070)
